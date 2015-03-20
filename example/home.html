@@ -5,21 +5,6 @@
     <link rel="stylesheet" href="/build/index.css" type="text/css" media="screen" charset="utf-8">
     <style type="text/css">
 
-        /*
-         * demo page bootstrap customizations
-         */
-        #hero-two {
-            text-align: center;
-        }
-
-        .hero-row {
-            margin-bottom: 8em;
-            text-shadow: 0px 1px 4px black;
-        }
-
-        #hero-one, #hero-three {
-            padding-top: 10em;
-        }
 
         h2 {
             color: #fff;
@@ -47,10 +32,14 @@
         }
 
         body {
-            background: url(/images/diagmonds.png)
+            background: black;
         }
 
-        .span4 {
+        .span3 {
+            text-align: center;
+        }
+
+        .span6 {
             text-align: center;
         }
     </style>
@@ -58,15 +47,13 @@
 <body>
 <div id="dashboard" class="row">
     <div class="row-fluid">
-        <div id="gauge-home-indoor-temp" class="span6">
+        <div id="gauge-home-indoor-temp" class="span3">
         </div>
-        <div id="gauge-home-indoor-humidity" class="span6">
+        <div id="gauge-home-indoor-humidity" class="span3">
         </div>
-    </div>
-    <div class="row-fluid">
-        <div id="home-indoor-temp" class="span6">
+        <div id="gauge-home-outdoor-temp" class="span3">
         </div>
-        <div id="home-indoor-humidity" class="span6">
+        <div id="gauge-home-outdoor-humidity" class="span3">
         </div>
     </div>
     <div class="row-fluid">
@@ -75,7 +62,6 @@
         <div id="home-outdoor-humidity" class="span6">
         </div>
     </div>
-
     <div class="row-fluid">
         <div id="eliq-6min-avgpower" class="span6">
         </div>
@@ -87,7 +73,6 @@
 <script type="text/javascript" src="/vendor/js/jquery-1.7.1.min.js"></script>
 <script type="text/javascript" src="/build/index.js"></script>
 <script type="text/javascript" src="home.js"></script>
-
 
 </body>
 </html>

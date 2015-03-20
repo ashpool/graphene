@@ -1,17 +1,6 @@
 (function () {
     var description;
     description = {
-        "Indoor humidity gauge": {
-            source: "http://192.168.0.14/render?from=-1hours&until=now&target=home.indoor.humidity&format=json",
-            GaugeLabel: {
-                parent: "#gauge-home-indoor-humidity",
-                observer: function(data){
-                    console.log("Label observing " + data);
-                },
-                title: "Indoor humidity",
-                type: "max"
-            }
-        },
         "Indoor temp gauge": {
             source: "http://192.168.0.14/render?from=-1hours&until=now&target=home.indoor.temp&format=json",
             GaugeLabel: {
@@ -20,7 +9,44 @@
                     console.log("Label observing " + data);
                 },
                 title: "Indoor temp",
-                type: "max"
+                type: "max",
+                unit: "C"
+            }
+        },
+        "Indoor humidity gauge": {
+            source: "http://192.168.0.14/render?from=-1hours&until=now&target=home.indoor.humidity&format=json",
+            GaugeLabel: {
+                parent: "#gauge-home-indoor-humidity",
+                observer: function(data){
+                    console.log("Label observing " + data);
+                },
+                title: "Indoor humidity",
+                type: "max",
+                unit: "%"
+            }
+        },
+        "Outdoor temp gauge": {
+            source: "http://192.168.0.14/render?from=-1hours&until=now&target=home.outdoor.temp&format=json",
+            GaugeLabel: {
+                parent: "#gauge-home-outdoor-temp",
+                observer: function(data){
+                    console.log("Label observing " + data);
+                },
+                title: "Outdoor temp",
+                type: "max",
+                unit: "C"
+            }
+        },
+        "Outdoor humidity gauge": {
+            source: "http://192.168.0.14/render?from=-1hours&until=now&target=home.outdoor.humidity&format=json",
+            GaugeLabel: {
+                parent: "#gauge-home-outdoor-humidity",
+                observer: function(data){
+                    console.log("Label observing " + data);
+                },
+                title: "Outdoor humidity",
+                type: "max",
+                unit: "%"
             }
         },
         "Indoor temp": {
