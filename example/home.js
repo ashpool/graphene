@@ -1,7 +1,7 @@
 (function () {
     var description;
     description = {
-        "": {
+        "Indoor humidity gauge": {
             source: "http://192.168.0.14/render?from=-1hours&until=now&target=home.indoor.humidity&format=json",
             GaugeLabel: {
                 parent: "#gauge-home-indoor-humidity",
@@ -12,7 +12,7 @@
                 type: "max"
             }
         },
-        "Indoor temp": {
+        "Indoor temp gauge": {
             source: "http://192.168.0.14/render?from=-1hours&until=now&target=home.indoor.temp&format=json",
             GaugeLabel: {
                 parent: "#gauge-home-indoor-temp",
@@ -23,11 +23,11 @@
                 type: "max"
             }
         },
-        "Outdoor temp": {
-            source: "http://192.168.0.14/render?from=-24hours&until=now&target=home.outdoor.temp&format=json",
+        "Indoor temp": {
+            source: "http://192.168.0.14/render?from=-24hours&until=now&target=home.indoor.temp&format=json",
             TimeSeries: {
-                parent: '#home-outdoor-temp',
-                title: 'outdoor temp',
+                parent: '#home-indoor-temp',
+                title: 'indoor temp',
                 label_offset: 200,
                 label_columns: 2,
                 time_span_mins: 12,
@@ -51,11 +51,52 @@
                 }
             }
         },
-        "Power average": {
+        "Outdoor temp": {
+            source: "http://192.168.0.14/render?from=-24hours&until=now&target=home.outdoor.temp&format=json",
+            TimeSeries: {
+                parent: '#home-outdoor-temp',
+                title: 'outdoor temp',
+                label_offset: 200,
+                label_columns: 2,
+                time_span_mins: 12,
+                observer: function (data) {
+                    console.log("Time series observing ", data);
+                }
+            }
+        },
+        "Outdoor humidity": {
+            source: "http://192.168.0.14/render?from=-24hours&until=now&target=home.outdoor.humidity&format=json",
+            TimeSeries: {
+                parent: '#home-outdoor-humidity',
+                title: 'outdoor humidity',
+                label_offset: 200,
+                label_columns: 2,
+                time_span_mins: 12,
+                observer: function (data) {
+                    console.log("Time series observing ", data);
+                }
+            }
+        },
+        "Power 6min average": {
             source: "http://192.168.0.14/render?from=-24hours&until=now&target=eliq.6min.avgpower&format=json",
             TimeSeries: {
                 parent: '#eliq-6min-avgpower',
-                title: 'indoor humidity',
+                title: '6min-avgpower',
+                label_offset: 200,
+                label_columns: 2,
+                time_span_mins: 12,
+                warn: 60,
+                error: 70,
+                observer: function (data) {
+                    console.log("Time series observing ", data);
+                }
+            }
+        },
+        "Power hour average": {
+            source: "http://192.168.0.14/render?from=-24hours&until=now&target=eliq.hour.avgpower&format=json",
+            TimeSeries: {
+                parent: '#eliq-hour-avgpower',
+                title: 'hour-avgpower',
                 label_offset: 200,
                 label_columns: 2,
                 time_span_mins: 12,
