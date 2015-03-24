@@ -49,6 +49,54 @@
                 unit: "%"
             }
         },
+        "Wind avg gauge": {
+            source: "http://192.168.0.14/render?from=-1hours&until=now&target=home.wind.wavg&format=json",
+            GaugeLabel: {
+                parent: "#gauge-home-wind-wavg",
+                observer: function(data){
+                    console.log("Label observing " + data);
+                },
+                title: "Wind average",
+                type: "max",
+                unit: "m/s"
+            }
+        },
+        "Wind gust gauge": {
+            source: "http://192.168.0.14/render?from=-1hours&until=now&target=home.wind.wgust&format=json",
+            GaugeLabel: {
+                parent: "#gauge-home-wind-wgust",
+                observer: function(data){
+                    console.log("Label observing " + data);
+                },
+                title: "Wind gust",
+                type: "max",
+                unit: "m/s"
+            }
+        },
+        "Wind dir gauge": {
+            source: "http://192.168.0.14/render?from=-1hours&until=now&target=home.wind.wdir&format=json",
+            GaugeLabel: {
+                parent: "#gauge-home-wind-wdir",
+                observer: function(data){
+                    console.log("Label observing " + data);
+                },
+                title: "Wind direction",
+                type: "max",
+                unit: "deg"
+            }
+        },
+        "Rain rate gauge": {
+            source: "http://192.168.0.14/render?from=-1hours&until=now&target=home.rain.rrate&format=json",
+            GaugeLabel: {
+                parent: "#gauge-home-rain-rrate",
+                observer: function(data){
+                    console.log("Label observing " + data);
+                },
+                title: "Rain rate",
+                type: "max",
+                unit: "mm/h"
+            }
+        },
         "Indoor temp": {
             source: "http://192.168.0.14/render?from=-24hours&until=now&target=home.indoor.temp&format=json",
             TimeSeries: {
@@ -103,16 +151,14 @@
                 }
             }
         },
-        "Power 6min average": {
-            source: "http://192.168.0.14/render?from=-24hours&until=now&target=eliq.6min.avgpower&format=json",
+        "UV": {
+            source: "http://192.168.0.14/render?from=-24hours&until=now&target=home.uv.uv&format=json",
             TimeSeries: {
-                parent: '#eliq-6min-avgpower',
-                title: '6min-avgpower',
+                parent: '#home-uv-uv',
+                title: 'UV',
                 label_offset: 200,
                 label_columns: 2,
                 time_span_mins: 12,
-                warn: 60,
-                error: 70,
                 observer: function (data) {
                     console.log("Time series observing ", data);
                 }
@@ -126,8 +172,6 @@
                 label_offset: 200,
                 label_columns: 2,
                 time_span_mins: 12,
-                warn: 60,
-                error: 70,
                 observer: function (data) {
                     console.log("Time series observing ", data);
                 }

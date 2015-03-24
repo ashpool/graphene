@@ -10,6 +10,9 @@
             padding-top: 10px;
             padding-bottom: 20px;
         }
+        .glview .metric .value {
+            font-size: 3.5em;
+        }
 
         body {
             background: black;
@@ -27,13 +30,23 @@
 <body>
 <div id="dashboard" class="row">
     <div class="row-fluid">
-        <div id="gauge-home-indoor-temp" class="span3">
+        <div id="gauge-home-indoor-temp" class="span2">
         </div>
-        <div id="gauge-home-indoor-humidity" class="span3">
+        <div id="gauge-home-indoor-humidity" class="span2">
         </div>
-        <div id="gauge-home-outdoor-temp" class="span3">
+        <div id="gauge-home-outdoor-temp" class="span2">
         </div>
-        <div id="gauge-home-outdoor-humidity" class="span3">
+        <div id="gauge-home-outdoor-humidity" class="span2">
+        </div>
+    </div>
+    <div class="row-fluid">
+        <div id="gauge-home-wind-wdir" class="span2">
+        </div>
+        <div id="gauge-home-wind-wavg" class="span2">
+        </div>
+        <div id="gauge-home-wind-wgust" class="span2">
+        </div>
+        <div id="gauge-home-rain-rrate" class="span2">
         </div>
     </div>
     <div class="row-fluid">
@@ -43,7 +56,7 @@
         </div>
     </div>
     <div class="row-fluid">
-        <div id="eliq-6min-avgpower" class="span6">
+        <div id="home-uv-uv" class="span6">
         </div>
         <div id="eliq-hour-avgpower" class="span6">
         </div>
