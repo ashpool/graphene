@@ -9,7 +9,6 @@
                     console.log("Label observing " + data);
                 },
                 title: "Indoor temp",
-                type: "max",
                 unit: "C"
             }
         },
@@ -21,7 +20,6 @@
                     console.log("Label observing " + data);
                 },
                 title: "Indoor humidity",
-                type: "max",
                 unit: "%"
             }
         },
@@ -33,7 +31,6 @@
                     console.log("Label observing " + data);
                 },
                 title: "Outdoor temp",
-                type: "max",
                 unit: "C"
             }
         },
@@ -45,7 +42,6 @@
                     console.log("Label observing " + data);
                 },
                 title: "Outdoor humidity",
-                type: "max",
                 unit: "%"
             }
         },
@@ -57,7 +53,6 @@
                     console.log("Label observing " + data);
                 },
                 title: "Wind average",
-                type: "max",
                 unit: "m/s"
             }
         },
@@ -69,7 +64,6 @@
                     console.log("Label observing " + data);
                 },
                 title: "Wind gust",
-                type: "max",
                 unit: "m/s"
             }
         },
@@ -81,7 +75,6 @@
                     console.log("Label observing " + data);
                 },
                 title: "Wind direction",
-                type: "max",
                 unit: "deg"
             }
         },
@@ -93,7 +86,6 @@
                     console.log("Label observing " + data);
                 },
                 title: "Rain rate",
-                type: "max",
                 unit: "mm/h"
             }
         },
