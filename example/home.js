@@ -157,7 +157,7 @@
             }
         },
         "Power hour average": {
-            source: "http://192.168.0.14/render?from=-24hours&until=now&target=eliq.hour.avgpower&format=json",
+            source: "http://192.168.0.14/render?from=-24hours&until=now&target=eliq.hour.avgpower&target=eliq.6min.avgpower&&format=json",
             TimeSeries: {
                 parent: '#eliq-hour-avgpower',
                 title: 'hour-avgpower',
