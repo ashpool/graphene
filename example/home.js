@@ -89,6 +89,32 @@
                 unit: "mm/h"
             }
         },
+        "White temp": {
+            source: "http://192.168.0.14/render?from=-24hours&until=now&target=home.white.temp&format=json",
+            TimeSeries: {
+                parent: '#home-white-temp',
+                title: 'white temp',
+                label_offset: 200,
+                label_columns: 2,
+                time_span_mins: 12,
+                observer: function (data) {
+                    console.log("Time series observing ", data);
+                }
+            }
+        },
+        "Red temp": {
+            source: "http://192.168.0.14/render?from=-24hours&until=now&target=home.red.temp&format=json",
+            TimeSeries: {
+                parent: '#home-red-temp',
+                title: 'red temp',
+                label_offset: 200,
+                label_columns: 2,
+                time_span_mins: 12,
+                observer: function (data) {
+                    console.log("Time series observing ", data);
+                }
+            }
+        },
         "Indoor temp": {
             source: "http://192.168.0.14/render?from=-24hours&until=now&target=home.indoor.temp&format=json",
             TimeSeries: {
