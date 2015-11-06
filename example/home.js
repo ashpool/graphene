@@ -2,7 +2,7 @@
     var description;
     description = {
         "Indoor temp gauge": {
-            source: "http://192.168.0.14/render?from=-1hours&until=now&target=home.indoor.temp&format=json",
+            source: "http://192.168.42.201/render?from=-1hours&until=now&target=home.indoor.temp&format=json",
             GaugeLabel: {
                 parent: "#gauge-home-indoor-temp",
                 observer: function(data){
@@ -13,7 +13,7 @@
             }
         },
         "Indoor humidity gauge": {
-            source: "http://192.168.0.14/render?from=-1hours&until=now&target=home.indoor.humidity&format=json",
+            source: "http://192.168.42.201/render?from=-1hours&until=now&target=home.indoor.humidity&format=json",
             GaugeLabel: {
                 parent: "#gauge-home-indoor-humidity",
                 observer: function(data){
@@ -24,7 +24,7 @@
             }
         },
         "Outdoor temp gauge": {
-            source: "http://192.168.0.14/render?from=-1hours&until=now&target=home.outdoor.temp&format=json",
+            source: "http://192.168.42.201/render?from=-1hours&until=now&target=home.outdoor.temp&format=json",
             GaugeLabel: {
                 parent: "#gauge-home-outdoor-temp",
                 observer: function(data){
@@ -35,7 +35,7 @@
             }
         },
         "Outdoor humidity gauge": {
-            source: "http://192.168.0.14/render?from=-1hours&until=now&target=home.outdoor.humidity&format=json",
+            source: "http://192.168.42.201/render?from=-1hours&until=now&target=home.outdoor.humidity&format=json",
             GaugeLabel: {
                 parent: "#gauge-home-outdoor-humidity",
                 observer: function(data){
@@ -46,7 +46,7 @@
             }
         },
         "Wind avg gauge": {
-            source: "http://192.168.0.14/render?from=-1hours&until=now&target=home.wind.wavg&format=json",
+            source: "http://192.168.42.201/render?from=-1hours&until=now&target=home.wind.wavg&format=json",
             GaugeLabel: {
                 parent: "#gauge-home-wind-wavg",
                 observer: function(data){
@@ -57,7 +57,7 @@
             }
         },
         "Wind gust gauge": {
-            source: "http://192.168.0.14/render?from=-1hours&until=now&target=home.wind.wgust&format=json",
+            source: "http://192.168.42.201/render?from=-1hours&until=now&target=home.wind.wgust&format=json",
             GaugeLabel: {
                 parent: "#gauge-home-wind-wgust",
                 observer: function(data){
@@ -68,7 +68,7 @@
             }
         },
         "Wind dir gauge": {
-            source: "http://192.168.0.14/render?from=-1hours&until=now&target=home.wind.wdir&format=json",
+            source: "http://192.168.42.201/render?from=-1hours&until=now&target=home.wind.wdir&format=json",
             GaugeLabel: {
                 parent: "#gauge-home-wind-wdir",
                 observer: function(data){
@@ -79,7 +79,7 @@
             }
         },
         "Rain rate gauge": {
-            source: "http://192.168.0.14/render?from=-1hours&until=now&target=home.rain.rrate&format=json",
+            source: "http://192.168.42.201/render?from=-1hours&until=now&target=home.rain.rrate&format=json",
             GaugeLabel: {
                 parent: "#gauge-home-rain-rrate",
                 observer: function(data){
@@ -89,8 +89,34 @@
                 unit: "mm/h"
             }
         },
+        "Bubblan temp": {
+            source: "http://192.168.42.201/render?from=-24hours&until=now&target=home.bubblan.temp&format=json",
+            TimeSeries: {
+                parent: '#home-bubblan-temp',
+                title: 'bubblan temp',
+                label_offset: 200,
+                label_columns: 2,
+                time_span_mins: 12,
+                observer: function (data) {
+                    console.log("Time series observing ", data);
+                }
+            }
+        },
+        "Pikachu temp": {
+            source: "http://192.168.42.201/render?from=-24hours&until=now&target=home.pikachu.temp&format=json",
+            TimeSeries: {
+                parent: '#home-pikachu-temp',
+                title: 'pikachu temp',
+                label_offset: 200,
+                label_columns: 2,
+                time_span_mins: 12,
+                observer: function (data) {
+                    console.log("Time series observing ", data);
+                }
+            }
+        },
         "Indoor temp": {
-            source: "http://192.168.0.14/render?from=-24hours&until=now&target=home.indoor.temp&format=json",
+            source: "http://192.168.42.201/render?from=-24hours&until=now&target=home.indoor.temp&format=json",
             TimeSeries: {
                 parent: '#home-indoor-temp',
                 title: 'indoor temp',
@@ -103,7 +129,7 @@
             }
         },
         "Indoor humidity": {
-            source: "http://192.168.0.14/render?from=-24hours&until=now&target=home.indoor.humidity&format=json",
+            source: "http://192.168.42.201/render?from=-24hours&until=now&target=home.indoor.humidity&format=json",
             TimeSeries: {
                 parent: '#home-indoor-humidity',
                 title: 'indoor humidity',
@@ -118,7 +144,7 @@
             }
         },
         "Outdoor temp": {
-            source: "http://192.168.0.14/render?from=-24hours&until=now&target=home.outdoor.temp&format=json",
+            source: "http://192.168.42.201/render?from=-24hours&until=now&target=home.outdoor.temp&format=json",
             TimeSeries: {
                 parent: '#home-outdoor-temp',
                 title: 'outdoor temp',
@@ -131,7 +157,7 @@
             }
         },
         "Outdoor humidity": {
-            source: "http://192.168.0.14/render?from=-24hours&until=now&target=home.outdoor.humidity&format=json",
+            source: "http://192.168.42.201/render?from=-24hours&until=now&target=home.outdoor.humidity&format=json",
             TimeSeries: {
                 parent: '#home-outdoor-humidity',
                 title: 'outdoor humidity',
@@ -144,7 +170,7 @@
             }
         },
         "UV": {
-            source: "http://192.168.0.14/render?from=-24hours&until=now&target=home.uv.uv&format=json",
+            source: "http://192.168.42.201/render?from=-24hours&until=now&target=home.uv.uv&format=json",
             TimeSeries: {
                 parent: '#home-uv-uv',
                 title: 'UV',
@@ -157,7 +183,7 @@
             }
         },
         "Power hour average": {
-            source: "http://192.168.0.14/render?from=-24hours&until=now&target=eliq.hour.avgpower&target=eliq.6min.avgpower&&format=json",
+            source: "http://192.168.42.201/render?from=-24hours&until=now&target=eliq.hour.avgpower&target=eliq.6min.avgpower&&format=json",
             TimeSeries: {
                 parent: '#eliq-hour-avgpower',
                 title: 'hour-avgpower',
